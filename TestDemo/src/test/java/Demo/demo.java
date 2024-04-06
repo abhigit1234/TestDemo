@@ -10,10 +10,16 @@ import org.testng.annotations.Test;
 public class demo {
 	WebDriver driver;
 
-	
+	@Parameters("browser")
 	@Test
-	public void test() {
-		driver = new ChromeDriver();		
+	public void test(String browserName) {
+		if (browserName.contains("chrome")) {
+			driver = new ChromeDriver();
+		} else if (browserName.contains("firefox")) {
+			driver = new FirefoxDriver();
+		} else if(browserName.contains("edge")){
+			driver = new EdgeDriver();
+		}
 		driver.get("https://www.google.com");
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
