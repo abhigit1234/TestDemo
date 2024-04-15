@@ -10,7 +10,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/rrr.feature",
 				glue = "Step",
-				tags = "",
+				tags = "@tag1",
 				dryRun = false,
 				monochrome = true,
 				plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
